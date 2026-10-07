@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Pollution in India | Environment Awareness</title>
+
+    <link rel="stylesheet"
+          href="pollution.css">
+
+    <script src="pollution.js"
+            defer></script>
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🌍 INDIA <span>CLEAN</span>
+    </div>
+
+    <button class="menu-btn"
+            id="menuBtn">
+        ☰
+    </button>
+
+    <nav id="navMenu">
+
+        <a href="#home">Home</a>
+
+        <a href="#aqi">Live AQI</a>
+
+        <a href="#pollution">Pollution</a>
+
+        <a href="#solutions">Solutions</a>
+
+        <a href="#news">News</a>
+
+        <a href="#videos">Videos</a>
+
+        <a href="#gallery">Gallery</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section id="home"
+         class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">
+            ENVIRONMENT AWARENESS PROJECT
+        </p>
+
+        <h1>
+            Let's Make
+            <span>India Cleaner</span>
+        </h1>
+
+        <p>
+            Discover pollution levels, understand environmental
+            problems, explore real images, watch educational videos,
+            read current news and learn practical solutions.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#aqi"
+               class="btn primary">
+                Check Live AQI
+            </a>
+
+            <a href="#solutions"
+               class="btn secondary">
+                Find Solutions
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <p>UNDERSTAND THE PROBLEM</p>
+
+        <h2>
+            Pollution affects
+            <span>everyone</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+    </div>
+
+
+    <div class="intro-grid">
+
+        <div class="info-card">
+
+            <div class="card-icon">
+                🌫️
+            </div>
+
+            <h3>Air Pollution</h3>
+
+            <p>
+                Harmful gases and fine particles can reduce
+                air quality and affect people, animals and plants.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="card-icon">
+                💧
+            </div>
+
+            <h3>Water Pollution</h3>
+
+            <p>
+                Sewage, chemicals, plastic and waste can
+                contaminate rivers, lakes and groundwater.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="card-icon">
+                ♻️
+            </div>
+
+            <h3>Waste Pollution</h3>
+
+            <p>
+                Poor waste management can create plastic,
+                soil and public-health problems.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LIVE AQI
+===================================================== -->
+
+<section id="aqi"
+         class="aqi-section">
+
+    <div class="section-heading light">
+
+        <p>LIVE ENVIRONMENT DATA</p>
+
+        <h2>
+            Indian City
+            <span>Air Quality</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p class="aqi-note">
+            Data shown here uses Open-Meteo's European AQI.
+            It is not the official CPCB Indian AQI.
+        </p>
+
+    </div>
+
+
+    <div class="api-status"
+         id="apiStatus">
+
+        Loading live air-quality data...
+
+    </div>
+
+
+    <!-- HIGHEST / LOWEST -->
+
+    <div class="aqi-highlights">
+
+        <div class="highlight-card">
+
+            <span>Highest selected-city AQI</span>
+
+            <strong id="highestCity">
+                Loading...
+            </strong>
+
+        </div>
+
+
+        <div class="highlight-card">
+
+            <span>Lowest selected-city AQI</span>
+
+            <strong id="lowestCity">
+                Loading...
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="city-search">
+
+        <input
+            type="text"
+            id="citySearch"
+            placeholder="Search Indian city...">
+
+        <button onclick="searchCity()">
+            🔎 Search
+        </button>
+
+    </div>
+
+
+    <div id="searchResult"
+         class="search-result">
+    </div>
+
+
+    <!-- CITY CARDS -->
+
+    <div id="cityResults"
+         class="city-grid">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     POLLUTION TYPES
+===================================================== -->
+
+<section id="pollution"
+         class="section">
+
+    <div class="section-heading">
+
+        <p>EXPLORE POLLUTION</p>
+
+        <h2>
+            Major Types of
+            <span>Pollution</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p>
+            Click any pollution type to explore causes,
+            effects, solutions and real-time images.
+        </p>
+
+    </div>
+
+
+    <div class="pollution-grid">
+
+
+        <article class="pollution-card"
+                 onclick="openPollutionModal('air')">
+
+            <img
+                src="https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg"
+                alt="Air pollution">
+
+            <div class="pollution-content">
+
+                <span>01</span>
+
+                <h3>🌫️ Air Pollution</h3>
+
+                <p>
+                    Smoke, gases, dust and fine particles
+                    contaminate the atmosphere.
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="pollution-card"
+                 onclick="openPollutionModal('water')">
+
+            <img
+                src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg"
+                alt="Water pollution">
+
+            <div class="pollution-content">
+
+                <span>02</span>
+
+                <h3>💧 Water Pollution</h3>
+
+                <p>
+                    Wastewater, chemicals and plastic
+                    contaminate water resources.
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="pollution-card"
+                 onclick="openPollutionModal('plastic')">
+
+            <img
+                src="https://images.pexels.com/photos/3735218/pexels-photo-3735218.jpeg"
+                alt="Plastic pollution">
+
+            <div class="pollution-content">
+
+                <span>03</span>
+
+                <h3>🛍️ Plastic Pollution</h3>
+
+                <p>
+                    Single-use plastics can accumulate
+                    in land and water.
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="pollution-card"
+                 onclick="openPollutionModal('industrial')">
+
+            <img
+                src="https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg"
+                alt="Industrial pollution">
+
+            <div class="pollution-content">
+
+                <span>04</span>
+
+                <h3>🏭 Industrial Pollution</h3>
+
+                <p>
+                    Industrial activities can produce
+                    air emissions, wastewater and waste.
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="pollution-card"
+                 onclick="openPollutionModal('soil')">
+
+            <img
+                src="https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg"
+                alt="Soil pollution">
+
+            <div class="pollution-content">
+
+                <span>05</span>
+
+                <h3>🌱 Soil Pollution</h3>
+
+                <p>
+                    Chemicals and improper waste disposal
+                    can damage soil.
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="pollution-card"
+                 onclick="openPollutionModal('noise')">
+
+            <img
+                src="https://images.pexels.com/photos/3584856/pexels-photo-3584856.jpeg"
+                alt="Noise pollution">
+
+            <div class="pollution-content">
+
+                <span>06</span>
+
+                <h3>🔊 Noise Pollution</h3>
+
+                <p>
+                    Traffic, construction and loud sound
+                    can disturb communities.
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EFFECTS
+===================================================== -->
+
+<section class="effects-section">
+
+    <div class="section-heading light">
+
+        <p>ENVIRONMENTAL IMPACT</p>
+
+        <h2>
+            Effects of
+            <span>Pollution</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+    </div>
+
+
+    <div class="effects-grid">
+
+        <div class="effect-box">
+            <div>🫁</div>
+            <h3>Human Health</h3>
+            <p>
+                Pollution can contribute to respiratory,
+                cardiovascular and other health risks.
+            </p>
+        </div>
+
+
+        <div class="effect-box">
+            <div>🐦</div>
+            <h3>Wildlife</h3>
+            <p>
+                Polluted habitats can affect animals,
+                birds and aquatic ecosystems.
+            </p>
+        </div>
+
+
+        <div class="effect-box">
+            <div>🌳</div>
+            <h3>Nature</h3>
+            <p>
+                Pollution can damage ecosystems,
+                vegetation and natural resources.
+            </p>
+        </div>
+
+
+        <div class="effect-box">
+            <div>🌡️</div>
+            <h3>Climate</h3>
+            <p>
+                Some pollutants contribute to climate
+                and atmospheric changes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SOLUTIONS
+===================================================== -->
+
+<section id="solutions"
+         class="section">
+
+    <div class="section-heading">
+
+        <p>TAKE ACTION</p>
+
+        <h2>
+            Detailed Pollution
+            <span>Solutions</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+    </div>
+
+
+    <div class="solution-grid">
+
+
+        <div class="solution-card">
+
+            <div class="solution-number">
+                01
+            </div>
+
+            <h3>🌫️ Reduce Air Pollution</h3>
+
+            <ul>
+
+                <li>
+                    Use public transport whenever practical.
+                </li>
+
+                <li>
+                    Walk or cycle for short distances.
+                </li>
+
+                <li>
+                    Avoid unnecessary vehicle idling.
+                </li>
+
+                <li>
+                    Maintain vehicles properly.
+                </li>
+
+                <li>
+                    Do not burn leaves or household waste.
+                </li>
+
+                <li>
+                    Control construction dust.
+                </li>
+
+                <li>
+                    Industries should use appropriate emission controls.
+                </li>
+
+            </ul>
+
+            <div class="example">
+                <strong>Example:</strong>
+                Compost dry leaves instead of burning them.
+            </div>
+
+        </div>
+
+
+        <div class="solution-card">
+
+            <div class="solution-number">
+                02
+            </div>
+
+            <h3>💧 Protect Water</h3>
+
+            <ul>
+
+                <li>
+                    Treat sewage before discharge.
+                </li>
+
+                <li>
+                    Treat industrial wastewater.
+                </li>
+
+                <li>
+                    Never throw plastic into rivers.
+                </li>
+
+                <li>
+                    Reduce chemical runoff.
+                </li>
+
+                <li>
+                    Protect lakes and wetlands.
+                </li>
+
+                <li>
+                    Use rainwater harvesting.
+                </li>
+
+                <li>
+                    Dispose of oil and chemicals responsibly.
+                </li>
+
+            </ul>
+
+            <div class="example">
+                <strong>Example:</strong>
+                Install a rainwater harvesting system in a school.
+            </div>
+
+        </div>
+
+
+        <div class="solution-card">
+
+            <div class="solution-number">
+                03
+            </div>
+
+            <h3>🛍️ Reduce Plastic</h3>
+
+            <ul>
+
+                <li>
+                    Carry reusable shopping bags.
+                </li>
+
+                <li>
+                    Use reusable water bottles.
+                </li>
+
+                <li>
+                    Avoid unnecessary single-use plastic.
+                </li>
+
+                <li>
+                    Separate recyclable waste.
+                </li>
+
+                <li>
+                    Reuse containers where appropriate.
+                </li>
+
+                <li>
+                    Support better packaging choices.
+                </li>
+
+            </ul>
+
+            <div class="example">
+                <strong>Example:</strong>
+                Replace disposable bottles with a reusable bottle.
+            </div>
+
+        </div>
+
+
+        <div class="solution-card">
+
+            <div class="solution-number">
+                04
+            </div>
+
+            <h3>🏭 Cleaner Industry</h3>
+
+            <ul>
+
+                <li>
+                    Install suitable pollution-control equipment.
+                </li>
+
+                <li>
+                    Treat wastewater.
+                </li>
+
+                <li>
+                    Monitor emissions.
+                </li>
+
+                <li>
+                    Improve energy efficiency.
+                </li>
+
+                <li>
+                    Use cleaner energy where practical.
+                </li>
+
+                <li>
+                    Handle hazardous waste correctly.
+                </li>
+
+                <li>
+                    Reuse process water where feasible.
+                </li>
+
+            </ul>
+
+            <div class="example">
+                <strong>Example:</strong>
+                Recycle process water after appropriate treatment.
+            </div>
+
+        </div>
+
+
+        <div class="solution-card">
+
+            <div class="solution-number">
+                05
+            </div>
+
+            <h3>🌱 Protect Soil</h3>
+
+            <ul>
+
+                <li>
+                    Use fertilizers responsibly.
+                </li>
+
+                <li>
+                    Avoid unnecessary pesticides.
+                </li>
+
+                <li>
+                    Compost organic waste.
+                </li>
+
+                <li>
+                    Never dump batteries or e-waste on land.
+                </li>
+
+                <li>
+                    Test soil when appropriate.
+                </li>
+
+                <li>
+                    Maintain vegetation.
+                </li>
+
+            </ul>
+
+            <div class="example">
+                <strong>Example:</strong>
+                Separate electronic waste from household waste.
+            </div>
+
+        </div>
+
+
+        <div class="solution-card">
+
+            <div class="solution-number">
+                06
+            </div>
+
+            <h3>🔊 Reduce Noise</h3>
+
+            <ul>
+
+                <li>
+                    Avoid unnecessary honking.
+                </li>
+
+                <li>
+                    Maintain vehicle silencers.
+                </li>
+
+                <li>
+                    Control construction noise.
+                </li>
+
+                <li>
+                    Use loudspeakers responsibly.
+                </li>
+
+                <li>
+                    Protect quiet zones.
+                </li>
+
+                <li>
+                    Monitor excessive community noise.
+                </li>
+
+            </ul>
+
+            <div class="example">
+                <strong>Example:</strong>
+                Avoid unnecessary horn use near schools and hospitals.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACTION CYCLE -->
+
+    <div class="action-cycle">
+
+        <h3>
+            Simple Pollution Reduction Cycle
+        </h3>
+
+        <div class="cycle">
+
+            <span>REDUCE</span>
+
+            <b>→</b>
+
+            <span>REUSE</span>
+
+            <b>→</b>
+
+            <span>RECYCLE</span>
+
+            <b>→</b>
+
+            <span>RESTORE</span>
+
+            <b>→</b>
+
+            <span>MONITOR</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PLASTIC CALCULATOR
+===================================================== -->
+
+<section class="calculator-section">
+
+    <div class="section-heading light">
+
+        <p>INTERACTIVE TOOL</p>
+
+        <h2>
+            Plastic Bottle
+            <span>Calculator</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+    </div>
+
+
+    <div class="calculator">
+
+        <label>
+            Disposable bottles used per week
+        </label>
+
+        <input
+            type="number"
+            id="bottlesPerWeek"
+            min="0"
+            placeholder="Example: 5">
+
+        <button onclick="calculatePlastic()">
+            Calculate
+        </button>
+
+        <div id="plasticResult"
+             class="calculator-result">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERPAPI LIVE IMAGES
+===================================================== -->
+
+<section id="gallery"
+         class="section">
+
+    <div class="section-heading">
+
+        <p>LIVE SEARCH IMAGES</p>
+
+        <h2>
+            Pollution
+            <span>Images</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p>
+            These images are loaded dynamically through
+            the Node.js + SerpApi backend.
+        </p>
+
+    </div>
+
+
+    <div class="image-search">
+
+        <input
+            type="text"
+            id="imageQuery"
+            placeholder="Example: air pollution India">
+
+        <button onclick="loadSerpImages()">
+            🔎 Search Images
+        </button>
+
+    </div>
+
+
+    <div id="liveImages"
+         class="live-image-grid">
+
+        <div class="loading-box">
+            Loading pollution images...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERPAPI NEWS
+===================================================== -->
+
+<section id="news"
+         class="news-section">
+
+    <div class="section-heading light">
+
+        <p>LIVE ENVIRONMENT NEWS</p>
+
+        <h2>
+            Pollution
+            <span>News</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p>
+            Search current environment-related news
+            through SerpApi.
+        </p>
+
+    </div>
+
+
+    <div class="news-search">
+
+        <input
+            type="text"
+            id="newsQuery"
+            placeholder="Example: pollution India">
+
+        <button onclick="loadNews()">
+            📰 Search News
+        </button>
+
+    </div>
+
+
+    <div id="newsResults"
+         class="news-grid">
+
+        <div class="loading-box">
+            Loading latest pollution news...
+        </div>
+
+    </div>
+    <div></div>
+
+</section>
+
+
+<!-- =====================================================
+     SERPAPI VIDEOS
+===================================================== -->
+
+<section id="videos"
+         class="section">
+
+   
